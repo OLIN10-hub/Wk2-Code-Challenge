@@ -1,26 +1,34 @@
-document.addEventListener(`DOMContentLoaded`) , () => {
-    let form = document.querySelector('itemform')
-    form.addEventListener('Add Item', (e) => {
-        e.preventDefault()
-        addItem(e.target.addItem.value)
-        form.reset()
 
+    let form1 = document.querySelector('.itemform')
+let shoppingList= []
+ const ul = document.querySelector('#ul')
+
+form1.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    const inputValue = e.target.itemname.value
+    console.log(inputValue);
+    shoppingList.push(inputValue)
+    createElement(shoppingList)
+    inputValue.value = ''
+})    
         
-    })
-}
+function createElement(shoppingList){
+    const list = document.createElement('li');
+    let button = document.createElement('button');
+ shoppingList.forEach((shopItem)=>{
+    list.textContent = shopItem;
+   
+})
 
-function addItem(todo){
-    let x = document.createElement('x')
-    let btn = document.createElement('button')
-    btn.addEventListener('click', handleDelete)
-    btn.textContent = 'x'
-    x.textContent = `${todo}`
-    x.appendChild(btn)
-    console.log(x)
-    document.querySelector('#todoContainer').appendChild(x)
+ul.appendChild(list,button)
+
+}
+const purchaseButton = document.getElementById('purchase');
+
+
+
+const clear = document.getElementById('clear');
+clear.addEventListener('click',()=>{
+ul.remove()
+})
     
-}
-
-function handleDelete(e){
-    e.target.parentNode.remove()
-}

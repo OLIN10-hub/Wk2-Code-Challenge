@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Shopping List</title>
-    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
         <div id="Add Item">
             <h3>Shopping List</h3>
-            <form id="itemform">
-                <input type="text" id="item-name" placeholder="Item Name" required>
-                <input type="number" id="item-price" placeholder="Item Price" required>
-                <input type="url" id="item-image" placeholder="Image link">
-                <button type="submit">Add Item</button>
-
-             
+            <form class="itemform">
+                <label>Add Item</label>
+                <input type="text" id="itemname" placeholder="Item Name" required>
+                <!-- <input type="number" id="itemprice" placeholder="Item Price" required> -->
+                <!-- <input type="url" id="item-image" placeholder="Image link"> -->
+                <button id="submit" type="submit">Add Item</button>
+                <button id="clear">Delete</button>
+                <button id = "purchase">Purchase</button>
+            
             </form>
+        </div>
+        <div>
+          <ul id="ul">
+
+          </ul>
         </div>
     </div>
     <!-- <
@@ -32,6 +38,7 @@
         </form>
         <ul id="item list"></ul>
     </div> --> 
+    <script src="index.js"></script>
 
 </body>
 </html>
